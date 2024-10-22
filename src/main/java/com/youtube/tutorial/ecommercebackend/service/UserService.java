@@ -16,6 +16,7 @@ import org.springframework.stereotype.Service;
 
 import java.sql.Timestamp;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 /**
@@ -176,7 +177,7 @@ public class UserService {
    * @return True if they have permission, false otherwise.
    */
   public boolean userHasPermissionToUser(LocalUser user, Long id) {
-    return user.getId() == id;
+    return Objects.equals(user.getId(), id);
   }
 
 }
